@@ -1,0 +1,27 @@
+File: magic8ball.c
+Author: David Middour
+
+Description:
+This kernel module implements a magic 8 ball toy.
+The user will insert the module and read from it,
+in which the module will respond with a random quote from uncle Iroh from Avatar: The Last Airbender.
+The user is unable to write or execute the module.
+
+magicball_read():
+Read function that prints out a random quote to the console
+
+magicball_open():
+Open function that occurs when module is opened to read from.
+sets a variable to prevent an infinite loop of magicball_read() printing out quotes.
+
+struct miscdevice magic_device:
+miscellaneous device structure
+
+struct file_operations magic_fops:
+struct defining what funtions to call when certain actions are performed
+
+int __init magicball_init(void):
+Initializer function that registers the device
+
+void __exit magicball_exit(void):
+Exit function that unregisters the device.
